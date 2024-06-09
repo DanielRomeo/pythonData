@@ -22,5 +22,8 @@ SELECT name FROM sqlite_master WHERE type='table';
 
 Delete a table from the database:
 ```sql
-DROP table People
+DROP table Voter
 ```
+
+Get the schema of a table in the database:
+`.schma Voter`
