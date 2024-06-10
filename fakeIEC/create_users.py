@@ -16,6 +16,8 @@ addresses_array = {
 
 ballot_array = ["ANC", "MK", "DA", "IFP", "BOSA", "EFF", "VFF", "ACT", "COPE", "ALJAMA AH", "GOOD", "PAC", "UDM", "NFP"]
 
+spread_sheet_cols = ["Firstname", "Lastaname", "Idnumber", "Province", "District", "National", "Provincial", "District", "Ethnicity"]
+
 # Define connection string (replace with your database filename if different)
 conn = sqlite3.connect('mydatabase.sqlite')
 cursor = conn.cursor()
