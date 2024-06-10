@@ -14,6 +14,8 @@ addresses_array = {
     "Western Cape": ["City of Cape Town Metropolitan", "Cape Winelands", "Central Karoo", "Garden Route", "Overberg", "West Coast"]
 }
 
+ballot_array = ["ANC", "MK", "DA", "IFP", "BOSA", "EFF", "VFF", "ACT", "COPE", "ALJAMA AH", "GOOD", "PAC", "UDM", "NFP"]
+
 # Define connection string (replace with your database filename if different)
 conn = sqlite3.connect('mydatabase.sqlite')
 cursor = conn.cursor()
