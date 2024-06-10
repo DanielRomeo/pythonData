@@ -69,7 +69,7 @@ class Voter(object):
 		return random.choice(list(addresses_array.keys()))
 
 	def get_random_district(self, province):
-    	if province in addresses_array:
+		if province in addresses_array:
 			return random.choice(addresses_array[province])
 		else:
 			return None  # Handle
