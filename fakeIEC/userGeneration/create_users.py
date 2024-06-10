@@ -54,11 +54,6 @@ class Voter(object):
 		return dob_halved+random_7_digits
 	
 
-
-
-
-
-
 	def get_random_province(self):
 		return random.choice(list(addresses_array.keys()))
 
