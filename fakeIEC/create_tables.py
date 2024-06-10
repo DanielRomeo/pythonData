@@ -72,7 +72,7 @@ SELECT name FROM sqlite_master WHERE type='table' AND
 
 existing_tables = [row[0] for row in cursor.fetchall()]
 
-for table_definition in [voter_table, ethnicity_table,address_table, vote_table ]:
+for table_definition in [voter_table, ethnicity_table, address_table, vote_table ]:
     if table_definition.split()[2] not in existing_tables:  # Check table name
         cursor.execute(table_definition)
         print(f"Created table: {table_definition.split()[2]}")
