@@ -14,7 +14,7 @@ addresses_array = {
     "Eastern Cape": ["Buffalo City Metropolitan", "Nelson Mandela Bay Metropolitan", "Alfred Nzo", "Amathole", "Chris Hani", "Joe Gqabi", "OR Tambo", "Sarah Baartman"],
     "Western Cape": ["City of Cape Town Metropolitan", "Cape Winelands", "Central Karoo", "Garden Route", "Overberg", "West Coast"]
 }
-ballot_array = ["ANC", "MK", "DA", "IFP", "BOSA", "EFF", "VFF", "ACT", "COPE", "ALJAMA AH", "GOOD", "PAC", "UDM", "NFP"]
+ballot_array = [ "ANC", "MK", "DA", "IFP", "BOSA", "EFF", "VFF", "ACT", "COPE", "ALJAMA AH", "GOOD", "PAC", "UDM", "NFP"]
 spread_sheet_cols = ["Firstname", "Lastaname", "Idnumber", "Ethnicity", "Province_address", "District_address", "National_vote", "Provincial_vote", "District_vote"]
 ethnicity = ["black", "indian", "coloured", "white"]
 
@@ -32,9 +32,20 @@ class Voter(object):
 		self.Ethnicity = random.choice(ethnicity)
 		self.Province_address = self.get_random_province()
 		self.District_address = self.get_random_district(self.Province_address)
-		self.National_vote = random.choice(ballot_array)
-		self.Provincial_vote = random.choice(ballot_array)
-		self.District_vote = random.choice(ballot_array)
+		vote = self.generate_vote() # this will populate the users vote or None, if they havent voted
+
+	def generate_vote(self):
+		isVoting = [0, 1,2]
+		choice = random.choice(isVoting)
+		print("choice is : ",choice)
+		if(choice == 1 or choice == 2):
+			self.National_vote = random.choice(ballot_array)
+			self.Provincial_vote = random.choice(ballot_array)
+			self.District_vote = random.choice(ballot_array)
+		elif(choice == 0):
+			self.National_vote = None
+			self.Provincial_vote = None
+			self.District_vote = None
 
 
 	def generate_south_africa_id(self, min_age=18, max_age=120):

@@ -57,7 +57,7 @@ query_insert_into_ethnicity2 = """
 INSERT INTO Ethnicity(name) Values('white');
 """
 query_insert_into_ethnicity3 = """
-INSERT INTO Ethnicity(name) Values('colored');
+INSERT INTO Ethnicity(name) Values('coloured');
 """
 query_insert_into_ethnicity4 = """
 INSERT INTO Ethnicity(name) Values('indian');
@@ -77,17 +77,12 @@ for table_definition in [voter_table, ethnicity_table, address_table, vote_table
         cursor.execute(table_definition)
         print(f"Created table: {table_definition.split()[2]}")
 
-# cursor.execute(voter_table)
-# cursor.execute(ethnicity_table)
-# cursor.execute(address_table)
-# cursor.execute(vote_table)
-
 
 # commented out query to isnert values into ethnicity
-# cursor.execute(query_insert_into_ethnicity1)
-# cursor.execute(query_insert_into_ethnicity2)
-# cursor.execute(query_insert_into_ethnicity3)
-# cursor.execute(query_insert_into_ethnicity4)
+cursor.execute(query_insert_into_ethnicity1)
+cursor.execute(query_insert_into_ethnicity2)
+cursor.execute(query_insert_into_ethnicity3)
+cursor.execute(query_insert_into_ethnicity4)
 
 
 # Save changes (commit)
